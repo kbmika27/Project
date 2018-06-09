@@ -11,8 +11,10 @@ import org.opencv.core.Size;
 
 public class Fourier {
 
-	Mat src;
-	Mat dst;
+	Mat src;//元
+	Mat dst;//フーリエ後
+    Mat real;//実部
+	Mat img;//虚部
 	Mat grayImage;
 
 	//ファイルの読み込み
@@ -40,11 +42,14 @@ public class Fourier {
 		Core.merge(planes, complexI);
 
 		// Calculate DFT, and magnitude.
-		Core.dft(complexI, complexI2);
-		Core.split(complexI2, planes);
+		Core.dft(complexI, complexI2);//complexI2がフーリエ後
+		Core.split(complexI2, planes);//実部と虚部
+		real=planes.get(0);
+		img=planes.get(1);
 		Mat mag = new Mat(planes.get(0).size(), planes.get(0).type());
 		Core.magnitude(planes.get(0), planes.get(1), mag);
-
+		
+		
 		Mat magI = mag;
 		Mat magI2 = new Mat(magI.size(), magI.type());
 		Mat magI3 = new Mat(magI.size(), magI.type());
@@ -89,6 +94,6 @@ public class Fourier {
 		Mat realResult = new Mat(magI5.size(), CvType.CV_32FC1);
 		magI5.convertTo(realResult, CvType.CV_32FC1);
 
-		return realResult;
+		return complexI2;
 	}
 }

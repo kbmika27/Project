@@ -4,10 +4,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/opencv-3.4.1">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/usr/local/Cellar/opencv/3.4.1_5/share/OpenCV/java"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/usr/local/Cellar/opencv/3.4.1_2/share/OpenCV/java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/opencv-3.4.1_2"/>
-	<classpathentry kind="lib" path="/usr/local/Cellar/opencv/3.4.1_5/share/OpenCV/java/opencv-341.jar"/>
+	<classpathentry kind="lib" path="/usr/local/Cellar/opencv/3.4.1_2/share/OpenCV/java/opencv-341.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
